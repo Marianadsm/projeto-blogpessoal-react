@@ -16,11 +16,11 @@ function Navbar() {
                             Blog Pessoal
                         </Typography>
                         <Typography>
-                        <Button color="inherit">Home</Button>
-                        <Button color="inherit">Postagens</Button>
-                        <Button color="inherit">Temas</Button>
-                        <Button color="inherit">Cadastrar Tema</Button>
-                        <Button color="inherit">Logout</Button>
+                            <Button color="inherit">Home</Button>
+                            <Button color="inherit">Postagens</Button>
+                            <Button color="inherit">Temas</Button>
+                            <Button color="inherit">Cadastrar Tema</Button>
+                            <Button color="inherit">Logout</Button>
                         </Typography>
                     </Toolbar>
                 </AppBar>
