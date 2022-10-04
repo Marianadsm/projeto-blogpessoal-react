@@ -1,5 +1,5 @@
 .titulo{
-    color: blue;
+    color: black !important;
     text-align:center;
 }
 
@@ -8,4 +8,8 @@
     height:300px;
     display: block;
     margin: 0 auto /*para centralizar na tela*/
+}
+
+.text-decorator-none{
+    text-decoration: none;
 }

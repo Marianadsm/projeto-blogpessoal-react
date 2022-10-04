@@ -1,7 +1,9 @@
 import { Button } from '@mui/material';
 import React from 'react';
-import { AppBar, Toolbar, Typography, IconButton } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, IconButton  } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 function Navbar() {
     return (
@@ -19,8 +21,12 @@ function Navbar() {
                             <Button color="inherit">Home</Button>
                             <Button color="inherit">Postagens</Button>
                             <Button color="inherit">Temas</Button>
-                            <Button color="inherit">Cadastrar Tema</Button>
-                            <Button color="inherit">Logout</Button>
+                            <Button color="inherit" >Cadastrar Tema</Button>
+                            <Link to='/login' className='text-decorator-none'>
+                            <Button color="inherit">
+                                Logout
+                            </Button>
+                            </Link>
                         </Typography>
                     </Toolbar>
                 </AppBar>

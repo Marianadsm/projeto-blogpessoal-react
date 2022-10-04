@@ -1,17 +1,16 @@
 import React from 'react';
-import Home from './paginas/home/Home'
+import Home from './pages/home/Home';
 import './App.css';
-import { Grid } from '@material-ui/core';
-import Navbar from './components/estaticos/navbar/navbar'
-import Footer from './components/estaticos/footer/footer'
+import Navbar from './components/estaticos/navbar/Navbar';
+import Footer from './components/estaticos/footer/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './paginas/Login/Login';
+import Login from './pages/login/Login';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter>{/*Antigo Router*/}
     <Navbar />
-      <div style={{ minHeight: '100vh' }}>
+      <div style={{ minHeight: '100vh' }} /*espaço entre footer e navbar*/>
         <Routes> {/*Antigo Switch*/}
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
