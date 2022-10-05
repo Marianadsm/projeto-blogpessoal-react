@@ -8,16 +8,14 @@ function Home() {
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa' >
                 <Grid alignItems="center" justifyContent="center" item xs={12} md={6}>
-                    <Box  paddingX={20} >
-                        <Typography variant="h3" gutterBottom  component="h3" align="center" className='titulo'>Seja bem vinde!</Typography>
-                        <Typography variant="h5" gutterBottom  component="h5" align="center" className='titulo'>Expresse aqui os seus pensamentos e opiniões!</Typography>
+                    <Box paddingX={20} >
+                        <Typography variant="h3" gutterBottom component="h3" align="center" className='titulo'>Seja bem vinde!</Typography>
+                        <Typography variant="h5" gutterBottom component="h5" align="center" className='titulo'>Expresse aqui os seus pensamentos e opiniões!</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center" >
-                        <Link to ='/login'className='text-decorator-none'> 
-                            <Button variant="outlined" style={{ fontWeight: 'bold' }}>
-                                Login
-                            </Button>
-                        </Link>
+                        <Button  className="botao" variant="outlined">
+                            Ver Postagens
+                        </Button>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6} alignItems="center" justifyContent="center" >
