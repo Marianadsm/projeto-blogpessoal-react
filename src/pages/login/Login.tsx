@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import './Login.css'
 import UserLogin from '../../models/UserLogin';
 import useLocalStorage from 'react-use-localstorage'
-import { api } from '../../services/Service';
+import { login } from '../../services/Service';
 
 function Login() {
     let navigate = useNavigate();
@@ -29,23 +29,21 @@ function Login() {
 
     useEffect(() => {
         if (token !== '') {
-          navigate('/home');
+            navigate('/home');
         }
-      }, [token]); /*aqui eu passo o token como parâmetro pro useEffect*/
+    }, [token]); /*aqui eu passo o token como parâmetro pro useEffect*/
 
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) { /*aqui ele observa o comportamento do formulario como um todo e faz o envio das infos por meio do SUBMIT*/
         e.preventDefault(); /*previne que o botão atualize a tela(que seria um comportamento padrao dele)*/
         try {
-            const resposta = await api.post(`/usuarios/logar`, userLogin);
-            setToken(resposta.data.token)
-
-            alert('Usuário logado com sucesso!')
+            await login(`/usuarios/logar`, userLogin, setToken)
+            alert('Usuário logado com sucesso!');
         } catch (error) {
-            alert('Dados de usuário inválidos! Tente novamente.')
+            alert('Dados de usuário inválidos! Tente novamente.');
         }
     }
- 
+
 
 
     return (
