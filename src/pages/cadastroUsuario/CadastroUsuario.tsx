@@ -14,6 +14,7 @@ function CadastroUsuario() {
                         <Typography variant="h3" gutterBottom /*margem inferior*/ color="textPrimary" component="h3" align="center" className="cadastrar" >Cadastrar</Typography>
 
                         <TextField
+                            required
                             id="nome"
                             label="Nome"
                             variant="outlined"
@@ -22,6 +23,7 @@ function CadastroUsuario() {
                             fullWidth />
 
                         <TextField
+                            required
                             id="usuario"
                             label="Usuário"/*label é o unico que pode ter um acento, etc*/
                             variant="outlined"
@@ -30,6 +32,7 @@ function CadastroUsuario() {
                             fullWidth />
 
                         <TextField
+                            required
                             id="senha"
                             label="Senha"
                             variant="outlined"
@@ -39,13 +42,14 @@ function CadastroUsuario() {
                             fullWidth />
 
                         <TextField
+                            required
                             id="confirmarSenha"
                             label="Confirmar senha"
                             variant="outlined"
                             name="confirmarSenha"
                             margin="normal"
                             type="password"
-                            fullWidth /> 
+                            fullWidth />
 
                         <Box marginTop={2} textAlign="center"  >
                             <Link to='/login' className="text-decorator-none">
@@ -55,8 +59,8 @@ function CadastroUsuario() {
                             </Link>
 
                             <Button type='submit' variant="contained" color="primary"   >
-                                    Cadastrar
-                                </Button>
+                                Cadastrar
+                            </Button>
                         </Box>
                     </form>
                 </Box>
