@@ -11,7 +11,7 @@ function ListaTemas() {
   let navigate = useNavigate();
 
   // estado para gerenciar os temas que virão do backend
-  const [temas, setTemas] = useState<Tema[]>([])
+  const [temas, setTemas] = useState<Tema[]>([]) //([]) é como eu vou inicia-lo
 
   // trazer o token do navegador para dentro do blog
   const [token, setToken] = useLocalStorage('token');
@@ -24,17 +24,17 @@ function ListaTemas() {
     }
   }, [token])
 
-  //função que realmente vai até o backend para buscar os temas
+  //função que realmente vai até o backend para buscar os temas (faz a requisição dos temas)
   async function getTemas() {
     await busca('/temas', setTemas, {
       headers: { 'Authorization': token }
     })
   }
 
-  //função para disparar a busca de temas assim que a tela for carregada
+  //função (criada acima) para disparar a busca de temas assim que a tela for carregada
   useEffect(() => {
     getTemas()
-  }, [temas.length])
+  }, [temas.length]) // length: sempre que a variável tema sofrer uma modificação: aciona o "getTemas"
 
   return (
     <>
@@ -53,14 +53,14 @@ function ListaTemas() {
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5} >
 
-                <Link to="" className="text-decorator-none">
+                <Link to={`/formularioTema/${tema.id}`}  className="text-decorator-none">
                   <Box mx={1}>
                     <Button variant="contained" className="marginLeft" size='small' color="primary" >
                       atualizar
                     </Button>
                   </Box>
                 </Link>
-                <Link to="" className="text-decorator-none">
+                <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                   <Box mx={1}>
                     <Button variant="contained" size='small' color="secondary">
                       deletar
