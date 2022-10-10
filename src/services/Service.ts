@@ -15,3 +15,8 @@ export const login = async (url: any, dados: any, setDado: any) => { /*url: url 
     setDado(resposta.data.token) /*aqui, ele recebe o usuario, senha e token.*/
 }
 
+/*get/getAll*/
+export const busca = async(url: any, setDado: any, header: any) => {
+    const resposta = await api.get(url, header)
+    setDado (resposta.data)
+}
