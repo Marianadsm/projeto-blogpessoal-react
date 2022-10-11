@@ -15,49 +15,48 @@ function Navbar() {
         navigate('/login')
     }
 
-
     return (
         <>
-            <AppBar position="static">
+            <AppBar className="appbar" position="static" >
                 <Toolbar variant="dense">
                     <Box className='cursor'>
-                        <Typography variant="h5" color="inherit">
-                            BLOG-PESSOAL
+                        <Typography variant="h5" className="bold">
+                            BLOG PESSOAL
                         </Typography>
                     </Box>
-                    <Box display="flex" justifyContent="start">
+                    <Box className="navbar">
 
-                        <Link to="/home" className="text-decorator-none">
+                        <Link to="/home" className="text-decorator-none" >
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
+                                <Typography variant="h6" className="font">
                                     HOME
                                 </Typography>
                             </Box>
                         </Link>
                         <Link to='/posts' className="text-decorator-none">
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
+                                <Typography variant="h6" className="font">
                                     POSTAGENS
                                 </Typography>
                             </Box>
                         </Link>
                         <Link to='/temas' className="text-decorator-none">
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
+                                <Typography variant="h6" className="font">
                                     TEMAS
                                 </Typography>
                             </Box>
                         </Link >
                         <Link to='/formularioTema' className="text-decorator-none" >
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
+                                <Typography variant="h6" className="font">
                                     CADASTRAR TEMA
                                 </Typography>
                             </Box>
                         </Link>
 
                         <Box mx={1} className='cursor' onClick={goLogout}>
-                            <Typography variant="h6" color="inherit">
+                            <Typography variant="h6" className="font">
                                 Sair
                             </Typography>
                         </Box>

@@ -29,11 +29,11 @@ function Footer() {
                     </Box>
                     <Box className="Box2" >
                         <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom className="textos" >© 2020 Copyright:</Typography>
+                            <Typography variant="subtitle2" align="center" gutterBottom className="textos" >© 2022 Copyright:</Typography>
                         </Box>
-                        <Box>
-                            <a target="_blank" href="https://brasil.generation.org" rel="noopener noreferrer">
-                                <Typography variant="subtitle2" gutterBottom className="textos" align="center">brasil.generation.org</Typography>
+                        <Box >
+                            <a className="text-decorator-none" target="_blank" href="https://github.com/marianadsm" rel="noopener noreferrer">
+                                <Typography  variant="subtitle2" gutterBottom align="center">Mariana Melo</Typography>
                             </a>
                         </Box>
                     </Box>

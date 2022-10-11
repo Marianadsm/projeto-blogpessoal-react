@@ -1,11 +1,17 @@
 .Box1 {
-    background-color: #3F51B5;
+    background-color:#786fa6;
     height: 120px;
 
 }
 
 .textos {
-    color: white;
+    color: white !important;
+    
+}
+
+.text-decorator-none{
+    text-decoration: none ;
+    color: white
 }
 
 .redes {
@@ -14,6 +20,6 @@
 }
 
 .Box2 {
-    background-color: #303F9F;
+    background-color:#574b90;
     height: 60px;
 }

@@ -1,8 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .cursor{
     cursor: pointer;
     color: white;
 }
 
+.navbar{
+    display:flex;
+    justify-content: end !important;
+    padding: 10px
+   
+   
+}
 .text-decorator-none{
     text-decoration: none;
+}
+
+.appbar{
+    background-color: #786fa6 !important;
+}
+
+.font{
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.bold{
+    font-family: 'Montserrat', sans-serif !important;
+    text-decoration: bold;
 }
