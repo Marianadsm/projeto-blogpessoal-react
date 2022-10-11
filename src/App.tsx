@@ -11,9 +11,15 @@ import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 import ListaTemas from './components/temas/listatema/ListaTema';
 import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
 import CadastroPost from './components/postagens/cadastroPost/CadastroPost';
+import store from './store/store';
+import { Provider } from 'react-redux';
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
+     <Provider store = {store}>
+      <ToastContainer />
     <BrowserRouter>
       
         <Navbar />
@@ -40,6 +46,7 @@ function App() {
         <Footer />
       
     </BrowserRouter>
+    </Provider>
   );
 }
 

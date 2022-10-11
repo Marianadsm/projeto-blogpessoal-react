@@ -4,17 +4,30 @@ import { Box, Button, Typography, Grid } from '@mui/material';
 import { Link, useNavigate } from "react-router-dom";
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem'
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
-import useLocalStorage from 'react-use-localstorage';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function Home() {
     let navigate = useNavigate()
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado!', {
+                position: "top-right",
+                autoClose: 2000,//2seg
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false, //desaparecer mesmo que o mouse esteja em cima
+                draggable: false, //para nao ser movida
+                theme: "colored",
+                progress: undefined
+            })
             navigate("/login")
-    
+
         }
     }, [token])
 
@@ -31,9 +44,9 @@ function Home() {
                         <Box marginRight={1}>
                             <ModalPostagem />
                         </Box>
-                        <Button className="botao" variant="outlined">
-                            Ver Postagens
-                        </Button>
+                        <Link to='/posts' className="text-decorator-none">
+                            <Button className="botao" variant="outlined"> Ver Postagens </Button>
+                        </Link>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={6} alignItems="center" justifyContent="center" >

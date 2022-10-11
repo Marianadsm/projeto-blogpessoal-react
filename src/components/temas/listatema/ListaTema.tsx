@@ -1,9 +1,11 @@
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material'
 import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage';
+import { toast } from 'react-toastify';
 import Tema from '../../../models/Tema';
 import { busca } from '../../../services/Service';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 function ListaTemas() {
@@ -14,13 +16,24 @@ function ListaTemas() {
   const [temas, setTemas] = useState<Tema[]>([]) //([]) é como eu vou inicia-lo
 
   // trazer o token do navegador para dentro do blog
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+);
 
   //verificar se a pessoa tem token. se não tiver, mandar para a pag de login
   useEffect(() => {
     if (token === '') {
-      alert('Faça o Login para continuar!')
-      navigate('/login')
+      toast.error('Você precisa estar logado!', {
+        position: "top-right",
+        autoClose: 2000,//2seg
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false, //desaparecer mesmo que o mouse esteja em cima
+        draggable: false, //para nao ser movida
+        theme: "colored",
+        progress: undefined
+    })      
+    navigate('/login')
     }
   }, [token])
 
