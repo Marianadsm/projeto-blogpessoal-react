@@ -27,7 +27,7 @@ function App() {
             <Route path="/home" element={<Home />} />
 
             <Route path="/temas" element={<ListaTemas />} />
-            <Route path="/cadastroTema" element={<CadastroTema />} />
+            <Route path="/formulariotema" element={<CadastroTema />} />
             <Route path="/atualizarTema/:id" element={<CadastroTema />} />
             <Route path="/apagarTema/:id" element={<DeletarTema />} />
 

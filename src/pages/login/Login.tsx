@@ -27,11 +27,11 @@ function Login() {
         })
     }
 
-    useEffect(() => {
-        if (token !== '') {
-            navigate('/login');
+    useEffect(()=>{
+        if(token != ''){
+            navigate('/home')
         }
-    }, [token]); /*aqui eu passo o token como parâmetro pro useEffect*/
+    }, [token]) /*aqui eu passo o token como parâmetro pro useEffect*/
 
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) { /*aqui ele observa o comportamento do formulario como um todo e faz o envio das infos por meio do SUBMIT*/

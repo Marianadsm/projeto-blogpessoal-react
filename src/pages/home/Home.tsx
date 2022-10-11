@@ -11,9 +11,10 @@ function Home() {
     const [token, setToken] = useLocalStorage('token');
 
     useEffect(() => {
-        if(token !== '') {
-            alert('Você precisa estar logado!')
-            navigate('/login')
+        if (token == "") {
+            alert("Você precisa estar logado")
+            navigate("/login")
+    
         }
     }, [token])
 
